@@ -13,7 +13,20 @@ try {
 
     if (trim($nama) !='' && trim($kelamin) !='' && trim($nik) != '' && trim($nomor_telp) != '' && trim($alamat) != ''){
 
-        $sql = "INSERT INTO `pelanggan`(`id`, `nama`, `kelamin`, `nik`, `nomor_telp`, `alamat`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')"
+        $sql = "INSERT INTO `pelanggan`(`nama`, `kelamin`, `nik`, `nomor_telp`, `alamat`) VALUES ('$nama','$kelamin','$nik','$nomor_telp','$alamat')";
+
+        $execute = mysqli_query($dbConnection, $sql);
+        
+         if ($execute){
+            $response["status"] = "sukses";
+            $response["message"] = "Berhasil menambah data pelanggan";
+        } else {
+            $response["status"] = "failed";
+            $response["message"] = "Gagal menambah data pelanggan";
+            $response["data"] = $row;
+        }
+
+
 
 
     } else {
