@@ -1,12 +1,12 @@
 <?php
 
-    $nik = $_GET['nik'];
+    $nik = $_POST['nik'];
+    $idMobil = $_POST['id_mobil'];
+    $berapaLama
 
     try{
 
-        if(trim($nik) != ''){
-            $sql = "S"
-        }
+        $sql= 
 
     } catch (Exception $e){
 
